@@ -30,7 +30,9 @@ describe('Discord OpenAI Bot', () => {
     sendToOpenAI.mockResolvedValue('response from openai');
     const message = { author: { bot: false }, content: 'hello', reply: jest.fn() };
     await client.listeners['messageCreate'](message);
-    expect(sendToOpenAI).toHaveBeenCalledWith(process.env.SYSTEM_PROMPT, 'hello');
+    const expectedPrompt = process.env.SYSTEM_PROMPT ||
+      'You are a helpful assistant. Only answer with facts.';
+    expect(sendToOpenAI).toHaveBeenCalledWith(expectedPrompt, 'hello');
     expect(message.reply).toHaveBeenCalledWith('response from openai');
   });
 
