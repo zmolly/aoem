@@ -1,0 +1,22 @@
+{
+  "name": "discord-openai-bot",
+  "version": "1.0.0",
+  "description": "Discord bot that uses OpenAI Chat API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --experimental-vm-modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "openai": "^4.26.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
